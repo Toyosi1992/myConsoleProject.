@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PolymorphismAssignment
 {
-    internal interface IQuittable
+    // Define an interface called IQuittable
+    // Interfaces traditionally start with a capital 'I' in C#
+    public interface IQuittable
     {
+        // Define a void method declaration with no body.
+        // Any class implementing this interface must provide the concrete implementation.
+        void Quit();
     }
 }
