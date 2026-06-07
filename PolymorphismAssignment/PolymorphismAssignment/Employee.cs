@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace PolymorphismAssignment
 {
-    // The Employee class implements the IQuittable interface using the ':' symbol
-    public class Employee : IQuittable
+    // Employee now properly inherits from the Person base class AND implements the IQuittable interface
+    public class Employee : Person, IQuittable
     {
-        // Properties to store basic employee details
+        // Unique property specific to the Employee class
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
 
-        // Fulfill the interface contract by providing the concrete implementation for Quit()
+        // Concrete implementation of the Quit() method required by IQuittable
         public void Quit()
         {
-            // Custom logic for when an employee invokes the Quit method
+            // Leverages the inherited FirstName and LastName properties from Person
             Console.WriteLine($"Employee {FirstName} {LastName} (ID: {Id}) has officially called the Quit() method.");
         }
     }
